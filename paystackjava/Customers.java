@@ -3,7 +3,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 /**
- * Created by Iyanu on 17/07/2016.
+ * Created by Iyanu Adelekan on 17/07/2016.
  */
 public class Customers {
     public Customers(){
