@@ -15,11 +15,11 @@ class Keys {
     private String fileContent="";
 
     //Keys
-    String TEST_SECRET_KEY;
-    String TEST_PUBLIC_KEY;
-    String LIVE_SECRET_KEY;
-    String LIVE_PUBLIC_KEY;
-    String KEY_IN_USE;
+    private String TEST_SECRET_KEY;
+    private String TEST_PUBLIC_KEY;
+    private String LIVE_SECRET_KEY;
+    private String LIVE_PUBLIC_KEY;
+    private String KEY_IN_USE;
 
     public void initKeys() throws FileNotFoundException {
         fileContent="";
