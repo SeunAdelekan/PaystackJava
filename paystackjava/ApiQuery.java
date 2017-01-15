@@ -1,3 +1,5 @@
+package com.iyanu.paystackjava;
+
 import java.util.HashMap;
 
 /**
