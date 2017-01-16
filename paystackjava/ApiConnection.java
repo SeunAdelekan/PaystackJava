@@ -14,21 +14,15 @@ import java.util.HashMap;
  * Created by Iyanu on 17/07/2016.
  */
 public class ApiConnection {
-
-    public ApiConnection(String url) {
-        this.url = url;
-        keys = new Keys();
-        try {
-            keys.initKeys();
-        } catch (FileNotFoundException e) {
-            System.out.print("Keys.json could not be found");
-            e.printStackTrace();
-        }
-        this.apiKey = keys.KEY_IN_USE;
-    }
-    private Keys keys;
+    
     private  String url;
     private String apiKey;
+    
+    public ApiConnection(String url) {
+        this.url = url;
+       
+        this.apiKey = keys.KEY_IN_USE;
+    }
 
     /*
     The following methods are used to send API POST REQUESTS
