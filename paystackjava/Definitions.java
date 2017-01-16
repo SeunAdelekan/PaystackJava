@@ -1,7 +1,9 @@
+package com.iyanu.paystackjava;
+
 /**
  * Created by Iyanu on 17/07/2016.
  */
-class Definitions {
+public class Definitions {
     //URL definitions for Paystack
     
     final static String BASE_API_ENDPOINT = "https://api.paystack.co";
