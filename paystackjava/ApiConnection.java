@@ -13,9 +13,16 @@ import java.util.HashMap;
  */
 public class ApiConnection {
 
+    private  String url;
+    private String apiKey;
+
+    /**
+     * @param url - Paystack API URL
+     */
     public ApiConnection(String url) {
         this.url = url;
-        keys = new Keys();
+        Keys keys = new Keys();
+
         try {
             keys.initKeys();
         } catch (FileNotFoundException e) {
@@ -24,14 +31,12 @@ public class ApiConnection {
         }
         this.apiKey = keys.KEY_IN_USE;
     }
-    private Keys keys;
-    private  String url;
-    private String apiKey;
 
-    /*
-    The following methods are used to send API POST REQUESTS
+    /**
+     * Connects to and queries Paystack API with POST
+     * @param query - APIQuery containing parameters to send
+     * @return - JSONObject containing API response
      */
-
     public JSONObject connectAndQuery(ApiQuery query) {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.post(url)
@@ -47,6 +52,11 @@ public class ApiConnection {
     }
 
 
+    /**
+     * Connects to and queries API with POST
+     * @param query - HashMap containing parameters to send
+     * @return - JSONObject containing API response
+     */
     public JSONObject connectAndQuery(HashMap<String,Object> query) {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.post(url)
@@ -61,10 +71,10 @@ public class ApiConnection {
         return null;
     }
 
-    /*
-    The following methods are used to send API GET REQUESTS
+    /**
+     * Used to send a GET request to the Paystack API
+     * @return - JSONObject containing the API response
      */
-
     public JSONObject connectAndQueryWithGet(){
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.get(url)
@@ -78,6 +88,11 @@ public class ApiConnection {
         return null;
     }
 
+    /**
+     * Used to send a GET request to the Paystack API
+     * @param query - APIQuery containing parameters to send
+     * @return - JSONObject containing API response
+     */
     public JSONObject connectAndQueryWithGet(ApiQuery query){
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.get(url)
@@ -92,6 +107,11 @@ public class ApiConnection {
         return null;
     }
 
+    /**
+     * Used to send a GET request to the Paystack API
+     * @param query - HashMap containing parameters to send
+     * @return - JSONObject containing API response
+     */
     public JSONObject connectAndQueryWithGet(HashMap<String,Object> query) {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.get(url)
@@ -106,10 +126,11 @@ public class ApiConnection {
         return null;
     }
 
-    /*
-    The following methods are used to send API PUT REQUESTS
+    /**
+     * Used to send a PUT request to the Paystack API
+     * @param query - APIQuery containing parameters to send
+     * @return - JSONObject containing API response
      */
-
     public JSONObject connectAndQueryWithPut(ApiQuery query) {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.put(url)
@@ -124,6 +145,11 @@ public class ApiConnection {
         return null;
     }
 
+    /**
+     * Used to send a PUT request to the Paystack API
+     * @param query - HashMap containing parameters to send
+     * @return - JSONObject containing API response
+     */
     public JSONObject connectAndQueryWithPut(HashMap<String,Object> query) {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.get(url)
@@ -138,6 +164,9 @@ public class ApiConnection {
         return null;
     }
 
+    /**
+     * Called to shut down the background event loop
+     */
     public static void shutDown() {
         try {
             Unirest.shutdown();

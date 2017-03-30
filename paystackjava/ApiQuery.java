@@ -4,18 +4,31 @@ import java.util.HashMap;
  * Created by Iyanu on 17/07/2016.
  */
 public class ApiQuery {
-    public ApiQuery(){
-        newQuery();
-    }
+
     private HashMap<String,Object> queryMap = null;
 
-    private void newQuery(){
-        queryMap = new HashMap();
+    /**
+     * Initializes a new query map
+     */
+    public ApiQuery(){
+        this.queryMap = new HashMap<String,Object>();
     }
+
+    /**
+     * Used to add a parameter to the query map
+     * @param key
+     * @param value
+     */
     public void putParams(String key, Object value){
-        queryMap.put(key,value);
+        this.queryMap.put(key,value);
     }
+
+    /**
+     * Used to get all parameters within the query map
+     * @return - HashMap containin g query parameters
+     */
     public HashMap <String,Object> getParams(){
-        return queryMap;
+        return this.queryMap;
     }
+
 }
