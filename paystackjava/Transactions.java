@@ -11,7 +11,7 @@ public class Transactions {
     private static ApiConnection apiConnection;
 
     /**
-     *
+     * Used to initialize a transaction
      * @param queryMap
      * @return
      */
@@ -21,7 +21,7 @@ public class Transactions {
     }
 
     /**
-     *
+     * Used to initialize a transaction
      * @param query
      * @return
      */
@@ -31,7 +31,7 @@ public class Transactions {
     }
 
     /**
-     *
+     * Used to initialize a transaction
      * @param reference
      * @param amount
      * @param email
@@ -52,7 +52,7 @@ public class Transactions {
     }
 
     /**
-     *
+     * Used to verify a transaction
      * @param reference
      * @return
      */
@@ -62,7 +62,7 @@ public class Transactions {
     }
 
     /**
-     *
+     * Used to list transactions
      * @param queryMap
      * @return
      */
@@ -72,7 +72,7 @@ public class Transactions {
     }
 
     /**
-     *
+     * Used to list transactions
      * @param query
      * @return
      */
@@ -82,7 +82,7 @@ public class Transactions {
     }
 
     /**
-     *
+     * Used to list transactions
      * @param perPage
      * @param page
      * @return
@@ -96,7 +96,7 @@ public class Transactions {
     }
 
     /**
-     *
+     * Used to fetch transactions
      * @param id
      * @return
      */
@@ -106,7 +106,7 @@ public class Transactions {
     }
 
     /**
-     *
+     * Used for charge authorization
      * @param queryMap
      * @return
      */
@@ -116,7 +116,7 @@ public class Transactions {
     }
 
     /**
-     *
+     * Used for charge authorization
      * @param query
      * @return
      */
@@ -126,7 +126,7 @@ public class Transactions {
     }
 
     /**
-     *
+     * Used for charge authorization
      * @param reference
      * @param authorization_code
      * @param amount
@@ -149,7 +149,7 @@ public class Transactions {
     }
 
     /**
-     *
+     * Used for charge token
      * @param queryMap
      * @return
      */
@@ -159,7 +159,7 @@ public class Transactions {
     }
 
     /**
-     *
+     * Used for charge token
      * @param query
      * @return
      */
@@ -169,7 +169,7 @@ public class Transactions {
     }
 
     /**
-     *
+     * Used for charge token
      * @param reference
      * @param token
      * @param amount
@@ -189,7 +189,7 @@ public class Transactions {
     }
 
     /**
-     *
+     * Used to export transactions
      * @param queryMap
      * @return
      */
@@ -199,7 +199,7 @@ public class Transactions {
     }
 
     /**
-     *
+     * Used to export transactions
      * @param query
      * @return
      */
@@ -209,7 +209,7 @@ public class Transactions {
     }
 
     /**
-     *
+     * Used to export transactions
      * @param from
      * @param to
      * @param settled
