@@ -6,5 +6,7 @@
 .idea
 *.iml
 run.sh
+.DS_Store
+.gitignore
 out
 gen
