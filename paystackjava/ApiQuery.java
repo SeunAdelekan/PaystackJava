@@ -3,7 +3,7 @@ package me.iyanuadelekan.paystackjava.core;
 import java.util.HashMap;
 
 /**
- * @author Iyanu on 17/07/2016.
+ * @author Iyanu Adelekan on 17/07/2016.
  */
 public class ApiQuery {
 

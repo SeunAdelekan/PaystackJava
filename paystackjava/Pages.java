@@ -8,7 +8,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 /**
- * Created by Iyanu on 17/07/2016.
+ * @author Iyanu Adelekan on 17/07/2016.
  */
 public class Pages {
 
