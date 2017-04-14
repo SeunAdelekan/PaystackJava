@@ -1,4 +1,4 @@
-package me.iyanuadelekan.paystackjava.core
+package me.iyanuadelekan.paystackjava.core;
 
 import java.util.HashMap;
 
@@ -7,7 +7,7 @@ import java.util.HashMap;
  */
 public class ApiQuery {
 
-    private HashMap<String,Object> queryMap = null;
+    private HashMap<String,Object> queryMap;
 
     /**
      * Initializes a new query map

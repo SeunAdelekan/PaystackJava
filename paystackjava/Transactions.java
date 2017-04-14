@@ -1,7 +1,10 @@
-package me.iyanuadelekan.paystackjava.core
+package me.iyanuadelekan.paystackjava.core;
+
+import me.iyanuadelekan.paystackjava.constants.Definitions;
+import me.iyanuadelekan.paystackjava.core.ApiConnection;
+import me.iyanuadelekan.paystackjava.core.ApiQuery;
 
 import org.json.JSONObject;
-
 import java.time.LocalDateTime;
 import java.util.HashMap;
 

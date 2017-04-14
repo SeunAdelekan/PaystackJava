@@ -1,4 +1,7 @@
-package me.iyanuadelekan.paystackjava.core
+package me.iyanuadelekan.paystackjava.core;
+
+import me.iyanuadelekan.paystackjava.core.Keys;
+import me.iyanuadelekan.paystackjava.core.ApiQuery;
 
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;

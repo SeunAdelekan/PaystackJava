@@ -1,4 +1,4 @@
-package me.iyanuadelekan.paystackjava.constants
+package me.iyanuadelekan.paystackjava.constants;
 
 /**
  * @author Iyanu on 17/07/2016.

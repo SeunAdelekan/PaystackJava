@@ -1,4 +1,4 @@
-package me.iyanuadelekan.paystackjava.core
+package me.iyanuadelekan.paystackjava.core;
 
 import org.json.JSONObject;
 import java.io.File;
