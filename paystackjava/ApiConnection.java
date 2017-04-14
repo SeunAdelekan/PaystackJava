@@ -1,3 +1,8 @@
+package me.iyanuadelekan.paystackjava.core;
+
+import me.iyanuadelekan.paystackjava.core.Keys;
+import me.iyanuadelekan.paystackjava.core.ApiQuery;
+
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
@@ -9,7 +14,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 /**
- * Created by Iyanu on 17/07/2016.
+ * @author Iyanu Adelekan on 17/07/2016.
  */
 public class ApiConnection {
 
@@ -26,9 +31,10 @@ public class ApiConnection {
         try {
             keys.initKeys();
         } catch (FileNotFoundException e) {
-            System.out.print("Keys.json could not be found");
+            System.out.print("Required Keys.json file could not be found.");
             e.printStackTrace();
         }
+
         this.apiKey = keys.KEY_IN_USE;
     }
 
@@ -41,7 +47,7 @@ public class ApiConnection {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.post(url)
                     .header("Accept","application/json")
-                    .header("Authorization","Bearer "+apiKey)
+                    .header("Authorization","Bearer " + apiKey)
                     .fields(query.getParams())
                     .asJson();
             return queryForResponse.getBody().getObject();
@@ -61,7 +67,7 @@ public class ApiConnection {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.post(url)
                     .header("Accept","application/json")
-                    .header("Authorization","Bearer "+apiKey)
+                    .header("Authorization","Bearer " + apiKey)
                     .fields(query)
                     .asJson();
             return queryForResponse.getBody().getObject();
@@ -79,7 +85,7 @@ public class ApiConnection {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.get(url)
                     .header("Accept","application/json")
-                    .header("Authorization","Bearer "+apiKey)
+                    .header("Authorization","Bearer " + apiKey)
                     .asJson();
             return queryForResponse.getBody().getObject();
         } catch (UnirestException e) {
@@ -97,7 +103,7 @@ public class ApiConnection {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.get(url)
                     .header("Accept","application/json")
-                    .header("Authorization","Bearer "+apiKey)
+                    .header("Authorization","Bearer " + apiKey)
                     .queryString(query.getParams())
                     .asJson();
             return queryForResponse.getBody().getObject();
@@ -116,7 +122,7 @@ public class ApiConnection {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.get(url)
                     .header("Accept","application/json")
-                    .header("Authorization","Bearer "+apiKey)
+                    .header("Authorization","Bearer " + apiKey)
                     .queryString(query)
                     .asJson();
             return queryForResponse.getBody().getObject();
@@ -135,7 +141,7 @@ public class ApiConnection {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.put(url)
                     .header("Accept","application/json")
-                    .header("Authorization","Bearer "+apiKey)
+                    .header("Authorization","Bearer " + apiKey)
                     .fields(query.getParams())
                     .asJson();
             return queryForResponse.getBody().getObject();
@@ -154,7 +160,7 @@ public class ApiConnection {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.get(url)
                     .header("Accept","application/json")
-                    .header("Authorization","Bearer "+apiKey)
+                    .header("Authorization","Bearer " + apiKey)
                     .queryString(query)
                     .asJson();
             return queryForResponse.getBody().getObject();
@@ -174,4 +180,5 @@ public class ApiConnection {
             e.printStackTrace();
         }
     }
+
 }

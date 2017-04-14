@@ -1,167 +1,236 @@
-import org.json.JSONObject;
+package me.iyanuadelekan.paystackjava.core;
 
+import me.iyanuadelekan.paystackjava.constants.Definitions;
+import me.iyanuadelekan.paystackjava.core.ApiConnection;
+import me.iyanuadelekan.paystackjava.core.ApiQuery;
+
+import org.json.JSONObject;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 
 /**
- * Created by Iyanu Adelekan on 17/07/2016.
+ * @author Iyanu Adelekan on 17/07/2016.
  */
 public class Transactions {
-    public Transactions() {
 
-    }
+    private static ApiConnection apiConnection;
 
-    private static ApiConnection apiConnection = null;
-
-    /*
-    The following set of methods aids the sending of API
-    requests for the INITIALIZATION of transactions
+    /**
+     * Used to initialize a transaction
+     * @param queryMap
+     * @return
      */
-
-    public JSONObject initializeTransaction(HashMap<String, Object> queryMap)   {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_INITIALIZE_TRANSACTION);
-        return apiConnection.connectAndQuery(queryMap);
+    public JSONObject initializeTransaction(HashMap<String, Object> queryMap) {
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_INITIALIZE_TRANSACTION);
+        return this.apiConnection.connectAndQuery(queryMap);
     }
 
-    public JSONObject initializeTransaction(ApiQuery query)   {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_INITIALIZE_TRANSACTION);
-        return apiConnection.connectAndQuery(query);
+    /**
+     * Used to initialize a transaction
+     * @param query
+     * @return
+     */
+    public JSONObject initializeTransaction(ApiQuery query) {
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_INITIALIZE_TRANSACTION);
+        return this.apiConnection.connectAndQuery(query);
     }
 
+    /**
+     * Used to initialize a transaction
+     * @param reference
+     * @param amount
+     * @param email
+     * @param plan
+     * @param callback_url
+     * @return
+     */
     public JSONObject initializeTransaction(String reference, String amount, String email,
-                                            String plan, String callback_url)   {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_INITIALIZE_TRANSACTION);
+                                            String plan, String callback_url) {
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_INITIALIZE_TRANSACTION);
         ApiQuery apiQuery = new ApiQuery();
         apiQuery.putParams("reference", reference);
         apiQuery.putParams("amount", amount);
         apiQuery.putParams("email", email);
         apiQuery.putParams("plan", plan);
         apiQuery.putParams("callback_url", callback_url);
-        return apiConnection.connectAndQuery(apiQuery);
+        return this.apiConnection.connectAndQuery(apiQuery);
     }
 
-    /*
-    The following set of methods aids the sending of API
-    requests for the verification of transactions
+    /**
+     * Used to verify a transaction
+     * @param reference
+     * @return
      */
-
-    public JSONObject verifyTransaction(String reference)   {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_VERIFY_TRANSACTION + reference);
-        return apiConnection.connectAndQueryWithGet();
+    public JSONObject verifyTransaction(String reference) {
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_VERIFY_TRANSACTION + reference);
+        return this.apiConnection.connectAndQueryWithGet();
     }
 
-    /*
-    The following set of methods aids the sending of API
-    requests for the LISTING of transactions
+    /**
+     * Used to list transactions
+     * @param queryMap
+     * @return
      */
-
-    public JSONObject listTransactions(HashMap<String, Object> queryMap)   {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_LIST_TRANSACTIONS);
-        return apiConnection.connectAndQueryWithGet(queryMap);
+    public JSONObject listTransactions(HashMap<String, Object> queryMap) {
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_LIST_TRANSACTIONS);
+        return this.apiConnection.connectAndQueryWithGet(queryMap);
     }
 
-    public JSONObject listTransactions(ApiQuery query)   {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_LIST_TRANSACTIONS);
-        return apiConnection.connectAndQueryWithGet(query);
+    /**
+     * Used to list transactions
+     * @param query
+     * @return
+     */
+    public JSONObject listTransactions(ApiQuery query) {
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_LIST_TRANSACTIONS);
+        return this.apiConnection.connectAndQueryWithGet(query);
     }
 
-    public JSONObject listTransactions(String perPage, String page)   {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_LIST_TRANSACTIONS);
+    /**
+     * Used to list transactions
+     * @param perPage
+     * @param page
+     * @return
+     */
+    public JSONObject listTransactions(String perPage, String page) {
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_LIST_TRANSACTIONS);
         ApiQuery apiQuery = new ApiQuery();
         apiQuery.putParams("perPage", perPage);
         apiQuery.putParams("page", page);
-        return apiConnection.connectAndQueryWithGet(apiQuery);
+        return this.apiConnection.connectAndQueryWithGet(apiQuery);
     }
 
-    /*
-    The following set of methods aids the sending of API
-    requests for the FETCHING of transactions
+    /**
+     * Used to fetch transactions
+     * @param id
+     * @return
      */
-
-    public JSONObject fetchTransaction(String id)   {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_FETCH_TRANSACTION + id);
-        return apiConnection.connectAndQueryWithGet();
+    public JSONObject fetchTransaction(String id) {
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_FETCH_TRANSACTION + id);
+        return this.apiConnection.connectAndQueryWithGet();
     }
 
-    /*
-    The following set of methods aids the sending of API
-    requests for CHARGE AUTHORIZATION
+    /**
+     * Used for charge authorization
+     * @param queryMap
+     * @return
      */
-
-    public JSONObject chargeAuthorization(HashMap<String, Object> queryMap)   {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_CHARGE_AUTHORIZATION);
-        return apiConnection.connectAndQuery(queryMap);
+    public JSONObject chargeAuthorization(HashMap<String, Object> queryMap) {
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_CHARGE_AUTHORIZATION);
+        return this.apiConnection.connectAndQuery(queryMap);
     }
 
-    public JSONObject chargeAuthorization(ApiQuery query)   {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_CHARGE_AUTHORIZATION);
-        return apiConnection.connectAndQuery(query);
+    /**
+     * Used for charge authorization
+     * @param query
+     * @return
+     */
+    public JSONObject chargeAuthorization(ApiQuery query) {
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_CHARGE_AUTHORIZATION);
+        return this.apiConnection.connectAndQuery(query);
     }
 
+    /**
+     * Used for charge authorization
+     * @param reference
+     * @param authorization_code
+     * @param amount
+     * @param email
+     * @param callback_url
+     * @return
+     */
     public JSONObject chargeAuthorization(String reference, String authorization_code, String amount,
-                                            String email, String callback_url)   {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_CHARGE_AUTHORIZATION);
+                                            String email, String callback_url) {
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_CHARGE_AUTHORIZATION);
         ApiQuery apiQuery = new ApiQuery();
+
         apiQuery.putParams("reference", reference);
         apiQuery.putParams("authorization_code", authorization_code);
         apiQuery.putParams("amount", amount);
         apiQuery.putParams("email", email);
         apiQuery.putParams("callback_url", callback_url);
 
-        return apiConnection.connectAndQuery(apiQuery);
+        return this.apiConnection.connectAndQuery(apiQuery);
     }
 
-    /*
-    The following set of methods aids the sending of API
-    requests for CHARGE Token
+    /**
+     * Used for charge token
+     * @param queryMap
+     * @return
      */
-
-    public JSONObject chargeToken(HashMap<String, Object> queryMap)   {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_CHARGE_TOKEN);
-        return apiConnection.connectAndQuery(queryMap);
+    public JSONObject chargeToken(HashMap<String, Object> queryMap) {
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_CHARGE_TOKEN);
+        return this.apiConnection.connectAndQuery(queryMap);
     }
 
-    public JSONObject chargeToken(ApiQuery query)   {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_CHARGE_TOKEN);
-        return apiConnection.connectAndQuery(query);
+    /**
+     * Used for charge token
+     * @param query
+     * @return
+     */
+    public JSONObject chargeToken(ApiQuery query) {
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_CHARGE_TOKEN);
+        return this.apiConnection.connectAndQuery(query);
     }
 
-    public JSONObject chargeToken(String reference, String token, String amount,
-                                          String email)   {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_CHARGE_TOKEN);
+    /**
+     * Used for charge token
+     * @param reference
+     * @param token
+     * @param amount
+     * @param email
+     * @return
+     */
+    public JSONObject chargeToken(String reference, String token, String amount, String email) {
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_CHARGE_TOKEN);
         ApiQuery apiQuery = new ApiQuery();
+
         apiQuery.putParams("reference", reference);
         apiQuery.putParams("authorization_code", token);
         apiQuery.putParams("amount", amount);
         apiQuery.putParams("email", email);
 
-        return apiConnection.connectAndQuery(apiQuery);
+        return this.apiConnection.connectAndQuery(apiQuery);
     }
 
-    /*
-    The following set of methods aids the sending of API
-    requests for EXPORT TRANSACTIONS
+    /**
+     * Used to export transactions
+     * @param queryMap
+     * @return
      */
-
-    public JSONObject exportTransactions(HashMap<String, Object> queryMap)   {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_EXPORT_TRANSACTIONS);
-        return apiConnection.connectAndQueryWithGet(queryMap);
+    public JSONObject exportTransactions(HashMap<String, Object> queryMap) {
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_EXPORT_TRANSACTIONS);
+        return this.apiConnection.connectAndQueryWithGet(queryMap);
     }
 
-    public JSONObject exportTransactions(ApiQuery query)   {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_EXPORT_TRANSACTIONS);
-        return apiConnection.connectAndQueryWithGet(query);
+    /**
+     * Used to export transactions
+     * @param query
+     * @return
+     */
+    public JSONObject exportTransactions(ApiQuery query) {
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_EXPORT_TRANSACTIONS);
+        return this.apiConnection.connectAndQueryWithGet(query);
     }
 
-    public JSONObject exportTransactions(LocalDateTime from, LocalDateTime to, boolean settled,
-                                         String payment_page)   {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_EXPORT_TRANSACTIONS);
+    /**
+     * Used to export transactions
+     * @param from
+     * @param to
+     * @param settled
+     * @param payment_page
+     * @return
+     */
+    public JSONObject exportTransactions(LocalDateTime from, LocalDateTime to, boolean settled, String payment_page) {
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_EXPORT_TRANSACTIONS);
         ApiQuery apiQuery = new ApiQuery();
+
         apiQuery.putParams("from", from);
         apiQuery.putParams("to", to);
         apiQuery.putParams("settled", settled);
         apiQuery.putParams("payment_page", payment_page);
 
-        return apiConnection.connectAndQueryWithGet(apiQuery);
+        return this.apiConnection.connectAndQueryWithGet(apiQuery);
     }
+
 }

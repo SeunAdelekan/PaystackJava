@@ -1,17 +1,21 @@
+package me.iyanuadelekan.paystackjava.core;
+
+import me.iyanuadelekan.paystackjava.constants.Definitions;
+
 import org.json.JSONObject;
 import java.util.HashMap;
 
 /**
- * Created by Iyanu Adelekan on 17/07/2016.
+ * @author Iyanu Adelekan on 17/07/2016.
  */
 public class Customers {
 
     private ApiConnection apiConnection;
 
     /**
-     *
+     * Used to create a new customer
      * @param queryMap
-     * @return
+     * @return JSONObject
      */
     public JSONObject createCustomer(HashMap<String,Object> queryMap){
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_CUSTOMERS_CREATE_CUSTOMER);
@@ -19,9 +23,9 @@ public class Customers {
     }
 
     /**
-     *
+     * Used to create a new customer
      * @param query
-     * @return
+     * @return JSONObject
      */
     public JSONObject createCustomer(ApiQuery query) {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_CUSTOMERS_CREATE_CUSTOMER);
@@ -29,13 +33,13 @@ public class Customers {
     }
 
     /**
-     *
+     * Used to create a new customer
      * @param email
      * @param firstName
      * @param lastName
      * @param phone
      * @param metadata
-     * @return
+     * @return JSONObject
      */
     public JSONObject createCustomer(String email, String firstName, String lastName,
                                      String phone, Object metadata) {
@@ -52,9 +56,9 @@ public class Customers {
     }
 
     /**
-     *
+     * Used to get a list of customers
      * @param queryMap
-     * @return
+     * @return JSONObject
      */
     public JSONObject listCustomers(HashMap<String,Object> queryMap) {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_CUSTOMERS_LIST_CUSTOMERS);
@@ -62,9 +66,9 @@ public class Customers {
     }
 
     /**
-     *
+     * Used to get a list of customers
      * @param query
-     * @return
+     * @return JSONObject
      */
     public JSONObject listCustomers(ApiQuery query) {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_CUSTOMERS_LIST_CUSTOMERS);
@@ -72,10 +76,10 @@ public class Customers {
     }
 
     /**
-     *
+     * Used to get a list of customers
      * @param perPage
      * @param page
-     * @return
+     * @return JSONObject
      */
     public JSONObject listCustomers(int perPage, int page) {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_CUSTOMERS_LIST_CUSTOMERS);
@@ -88,9 +92,9 @@ public class Customers {
     }
 
     /**
-     *
+     * Used to get a customer
      * @param idOrCustomerCode
-     * @return
+     * @return JSONObject
      */
     public JSONObject fetchCustomer(String idOrCustomerCode) {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_CUSTOMERS_FETCH_CUSTOMER + idOrCustomerCode);
@@ -98,10 +102,10 @@ public class Customers {
     }
 
     /**
-     *
+     * Used to update a customer
      * @param queryMap
      * @param idOrCustomerCode
-     * @return
+     * @return JSONObject
      */
     public JSONObject updateCustomer(HashMap<String,Object> queryMap, String idOrCustomerCode) {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_CUSTOMERS_UPDATE_CUSTOMER + idOrCustomerCode);
@@ -109,10 +113,10 @@ public class Customers {
     }
 
     /**
-     *
+     * Used to update a customer
      * @param query
      * @param idOrCustomerCode
-     * @return
+     * @return JSONObject
      */
     public JSONObject updateCustomer(ApiQuery query, String idOrCustomerCode) {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_CUSTOMERS_UPDATE_CUSTOMER + idOrCustomerCode);
@@ -120,18 +124,18 @@ public class Customers {
     }
 
     /**
-     *
+     * Used to update a customer
      * @param idOrCustomerCode
      * @param email
      * @param firstName
      * @param lastName
      * @param phone
      * @param metadata
-     * @return
+     * @return JSONObject
      */
     public JSONObject updateCustomer(String idOrCustomerCode, String email, String firstName, String lastName,
                                      String phone, Object metadata) {
-        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_CUSTOMERS_UPDATE_CUSTOMER + idOrCustomerCode);
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_CUSTOMERS_UPDATE_CUSTOMER.concat(idOrCustomerCode));
 
         ApiQuery apiQuery = new ApiQuery();
         apiQuery.putParams("first_name",firstName);
