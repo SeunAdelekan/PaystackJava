@@ -44,7 +44,7 @@ public class ApiConnection {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.post(url)
                     .header("Accept","application/json")
-                    .header("Authorization","Bearer "+apiKey)
+                    .header("Authorization","Bearer " + apiKey)
                     .fields(query.getParams())
                     .asJson();
             return queryForResponse.getBody().getObject();
@@ -64,7 +64,7 @@ public class ApiConnection {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.post(url)
                     .header("Accept","application/json")
-                    .header("Authorization","Bearer "+apiKey)
+                    .header("Authorization","Bearer " + apiKey)
                     .fields(query)
                     .asJson();
             return queryForResponse.getBody().getObject();
@@ -82,7 +82,7 @@ public class ApiConnection {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.get(url)
                     .header("Accept","application/json")
-                    .header("Authorization","Bearer "+apiKey)
+                    .header("Authorization","Bearer " + apiKey)
                     .asJson();
             return queryForResponse.getBody().getObject();
         } catch (UnirestException e) {
@@ -100,7 +100,7 @@ public class ApiConnection {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.get(url)
                     .header("Accept","application/json")
-                    .header("Authorization","Bearer "+apiKey)
+                    .header("Authorization","Bearer " + apiKey)
                     .queryString(query.getParams())
                     .asJson();
             return queryForResponse.getBody().getObject();
@@ -119,7 +119,7 @@ public class ApiConnection {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.get(url)
                     .header("Accept","application/json")
-                    .header("Authorization","Bearer "+apiKey)
+                    .header("Authorization","Bearer " + apiKey)
                     .queryString(query)
                     .asJson();
             return queryForResponse.getBody().getObject();
@@ -138,7 +138,7 @@ public class ApiConnection {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.put(url)
                     .header("Accept","application/json")
-                    .header("Authorization","Bearer "+apiKey)
+                    .header("Authorization","Bearer " + apiKey)
                     .fields(query.getParams())
                     .asJson();
             return queryForResponse.getBody().getObject();
@@ -157,7 +157,7 @@ public class ApiConnection {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.get(url)
                     .header("Accept","application/json")
-                    .header("Authorization","Bearer "+apiKey)
+                    .header("Authorization","Bearer " + apiKey)
                     .queryString(query)
                     .asJson();
             return queryForResponse.getBody().getObject();
