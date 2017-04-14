@@ -26,9 +26,10 @@ public class ApiConnection {
         try {
             keys.initKeys();
         } catch (FileNotFoundException e) {
-            System.out.print("Keys.json could not be found");
+            System.out.print("Required Keys.json file could not be found.");
             e.printStackTrace();
         }
+
         this.apiKey = keys.KEY_IN_USE;
     }
 
@@ -174,4 +175,5 @@ public class ApiConnection {
             e.printStackTrace();
         }
     }
+
 }
