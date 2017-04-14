@@ -7,90 +7,126 @@ import java.util.HashMap;
  */
 public class Subscriptions {
 
-    public Subscriptions(){
+    private ApiConnection apiConnection;
+    private ApiQuery apiQuery;
 
-    }
-
-    private ApiConnection apiConnection = null;
-    private ApiQuery apiQuery = null;
-
-    /*
-    The following set of methods aids the sending of API
-    requests for the CREATION of subscriptions
+    /**
+     * Used to create a subscription
+     * @param queryMap
+     * @return
      */
-
     public JSONObject createSubscription(HashMap<String, Object> queryMap)  {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_CREATE_SUBSCRIPTION);
-        return apiConnection.connectAndQuery(queryMap);
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_CREATE_SUBSCRIPTION);
+        return this.apiConnection.connectAndQuery(queryMap);
     }
 
+    /**
+     * Used to create a subscription
+     * @param query
+     * @return
+     */
     public JSONObject createSubscription(ApiQuery query)  {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_CREATE_SUBSCRIPTION);
-        return apiConnection.connectAndQuery(query);
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_CREATE_SUBSCRIPTION);
+        return this.apiConnection.connectAndQuery(query);
     }
 
+    /**
+     * Used to create a subscription
+     * @param customer
+     * @param plan
+     * @param authorization
+     * @return
+     */
     public JSONObject createSubscription(String customer, String plan, String authorization)  {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_CREATE_SUBSCRIPTION);
-        apiQuery = new ApiQuery();
-        apiQuery.putParams("customer", customer);
-        apiQuery.putParams("plan", plan);
-        apiQuery.putParams("authorization", authorization);
-        return apiConnection.connectAndQuery(apiQuery);
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_CREATE_SUBSCRIPTION);
+        this.apiQuery = new ApiQuery();
+
+        this.apiQuery.putParams("customer", customer);
+        this.apiQuery.putParams("plan", plan);
+        this.apiQuery.putParams("authorization", authorization);
+
+        return this.apiConnection.connectAndQuery(this.apiQuery);
     }
 
-    /*
-    The following set of methods aids the sending of API
-    requests for the DISABLING of subscriptions
+    /**
+     * Used to disable a subscription
+     * @param queryMap
+     * @return
      */
-
     public JSONObject disableSubscription(HashMap<String, Object> queryMap)  {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_DISABLE_SUBSCRIPTION);
-        return apiConnection.connectAndQuery(queryMap);
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_DISABLE_SUBSCRIPTION);
+        return this.apiConnection.connectAndQuery(queryMap);
     }
 
+    /**
+     * Used to disable a subscription
+     * @param query
+     * @return
+     */
     public JSONObject disableSubscription(ApiQuery query)  {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_DISABLE_SUBSCRIPTION);
-        return apiConnection.connectAndQuery(query);
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_DISABLE_SUBSCRIPTION);
+        return this.apiConnection.connectAndQuery(query);
     }
 
+    /**
+     * Used to disable a subscription
+     * @param code
+     * @param token
+     * @return
+     */
     public JSONObject disableSubscription(String code, String token)  {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_DISABLE_SUBSCRIPTION);
-        apiQuery = new ApiQuery();
-        apiQuery.putParams("code", code);
-        apiQuery.putParams("token", token);
-        return apiConnection.connectAndQuery(apiQuery);
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_DISABLE_SUBSCRIPTION);
+        this.apiQuery = new this.apiQuery();
+
+        this.apiQuery.putParams("code", code);
+        this.apiQuery.putParams("token", token);
+
+        return this.apiConnection.connectAndQuery(this.apiQuery);
     }
 
-    /*
-    The following set of methods aids the sending of API
-    requests for the ENABLING of subscriptions
+    /**
+     * Used to enable a subscription
+     * @param queryMap
+     * @return
      */
-
     public JSONObject enableSubscription(HashMap<String, Object> queryMap)  {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_ENABLE_SUBSCRIPTION);
-        return apiConnection.connectAndQuery(queryMap);
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_ENABLE_SUBSCRIPTION);
+        return this.apiConnection.connectAndQuery(queryMap);
     }
 
-    public JSONObject enableSubscription(ApiQuery query)  {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_ENABLE_SUBSCRIPTION);
-        return apiConnection.connectAndQuery(query);
-    }
-
-    public JSONObject enableSubscription(String code, String token)  {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_ENABLE_SUBSCRIPTION);
-        apiQuery = new ApiQuery();
-        apiQuery.putParams("code", code);
-        apiQuery.putParams("token", token);
-        return apiConnection.connectAndQuery(apiQuery);
-    }
-
-    /*
-    The following set of methods aids the sending of API
-    requests for the FETCHING of subscriptions
+    /**
+     * Used to enable a subscription
+     * @param query
+     * @return
      */
+    public JSONObject enableSubscription(ApiQuery query)  {
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_ENABLE_SUBSCRIPTION);
+        return this.apiConnection.connectAndQuery(query);
+    }
 
+    /**
+     * Used to enable a subscription
+     * @param code
+     * @param token
+     * @return
+     */
+    public JSONObject enableSubscription(String code, String token)  {
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_ENABLE_SUBSCRIPTION);
+        this.apiQuery = new ApiQuery();
+
+        this.apiQuery.putParams("code", code);
+        this.apiQuery.putParams("token", token);
+
+        return this.apiConnection.connectAndQuery(this.apiQuery);
+    }
+
+    /**
+     * Used to fetch a subscription
+     * @param idOrSubscriptionCode
+     * @return
+     */
     public JSONObject fetchSubscription(String idOrSubscriptionCode)  {
-        apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_FETCH_SUBSCRIPTION);
-        return apiConnection.connectAndQueryWithGet();
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_FETCH_SUBSCRIPTION);
+        return this.apiConnection.connectAndQueryWithGet();
     }
 }
