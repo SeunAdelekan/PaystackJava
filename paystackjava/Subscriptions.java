@@ -3,7 +3,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 /**
- * Created by Iyanu on 17/07/2016.
+ * @author Iyanu on 17/07/2016.
  */
 public class Subscriptions {
 
@@ -129,4 +129,5 @@ public class Subscriptions {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_SUBSCRIPTIONS_FETCH_SUBSCRIPTION);
         return this.apiConnection.connectAndQueryWithGet();
     }
+
 }
