@@ -1,10 +1,12 @@
+package me.iyanuadelekan.paystackjava.core
+
 import org.json.JSONObject;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
- * Created by Iyanu on 18/07/2016.
+ * @author Iyanu Adelekan on 18/07/2016.
  */
 class Keys {
 

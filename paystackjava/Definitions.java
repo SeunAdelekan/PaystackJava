@@ -1,5 +1,7 @@
+package me.iyanuadelekan.paystackjava.constants
+
 /**
- * Created by Iyanu on 17/07/2016.
+ * @author Iyanu on 17/07/2016.
  */
 class Definitions {
 

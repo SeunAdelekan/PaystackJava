@@ -1,8 +1,10 @@
+package me.iyanuadelekan.paystackjava.core
+
 import org.json.JSONObject;
 import java.util.HashMap;
 
 /**
- * Created by Iyanu Adelekan on 17/07/2016.
+ * @author Iyanu Adelekan on 17/07/2016.
  */
 public class Customers {
 
@@ -131,7 +133,7 @@ public class Customers {
      */
     public JSONObject updateCustomer(String idOrCustomerCode, String email, String firstName, String lastName,
                                      String phone, Object metadata) {
-        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_CUSTOMERS_UPDATE_CUSTOMER + idOrCustomerCode);
+        this.apiConnection = new ApiConnection(Definitions.PAYSTACK_CUSTOMERS_UPDATE_CUSTOMER.concat(idOrCustomerCode));
 
         ApiQuery apiQuery = new ApiQuery();
         apiQuery.putParams("first_name",firstName);

@@ -1,7 +1,9 @@
+package me.iyanuadelekan.paystackjava.core
+
 import java.util.HashMap;
 
 /**
- * Created by Iyanu on 17/07/2016.
+ * @author Iyanu on 17/07/2016.
  */
 public class ApiQuery {
 
