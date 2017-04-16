@@ -1,4 +1,4 @@
-package me.iyanuadelekan.paystackjava.core;
+package main.java.paystackjava.core;
 
 import org.json.JSONObject;
 import java.io.File;
@@ -10,17 +10,17 @@ import java.util.Scanner;
  */
 class Keys {
 
-    String TEST_SECRET_KEY;
-    String TEST_PUBLIC_KEY;
-    String LIVE_SECRET_KEY;
-    String LIVE_PUBLIC_KEY;
+    private String TEST_SECRET_KEY;
+    private String TEST_PUBLIC_KEY;
+    private String LIVE_SECRET_KEY;
+    private String LIVE_PUBLIC_KEY;
     String KEY_IN_USE;
 
     /**
      * Used to initialise all necessary API keys
      * @throws FileNotFoundException
      */
-    public void initKeys() throws FileNotFoundException {
+    void initKeys() throws FileNotFoundException {
         JSONObject keyObject;
         String fileContent = "";
         File file = new File("Keys.json");

@@ -1,9 +1,9 @@
-package me.iyanuadelekan.paystackjava.constants;
+package main.java.paystackjava.constants;
 
 /**
  * @author Iyanu Adelekan on 17/07/2016.
  */
-class Definitions {
+public class Definitions {
 
     /**
      * The following are URL definitions for the Paystack API.

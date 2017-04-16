@@ -1,4 +1,4 @@
-package me.iyanuadelekan.paystackjava.core;
+package main.java.paystackjava.core;
 
 import java.util.HashMap;
 

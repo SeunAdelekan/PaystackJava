@@ -1,8 +1,7 @@
-package me.iyanuadelekan.paystackjava.core;
+package main.java.paystackjava.core;
 
-import me.iyanuadelekan.paystackjava.constants.Definitions;
-import me.iyanuadelekan.paystackjava.core.ApiConnection;
-import me.iyanuadelekan.paystackjava.core.ApiQuery;
+import main.java.paystackjava.constants.Definitions;
+import main.java.paystackjava.core.ApiQuery;
 
 import org.json.JSONObject;
 import java.util.HashMap;

@@ -1,6 +1,6 @@
-package me.iyanuadelekan.paystackjava.core;
+package main.java.paystackjava.core;
 
-import me.iyanuadelekan.paystackjava.constants.Definitions;
+import main.java.paystackjava.constants.Definitions;
 
 import org.json.JSONObject;
 import java.util.HashMap;

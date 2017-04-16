@@ -1,8 +1,7 @@
-package me.iyanuadelekan.paystackjava.core;
+package main.java.paystackjava.core;
 
-import me.iyanuadelekan.paystackjava.constants.Definitions;
-import me.iyanuadelekan.paystackjava.core.ApiConnection;
-import me.iyanuadelekan.paystackjava.core.ApiQuery;
+import main.java.paystackjava.constants.Definitions;
+import main.java.paystackjava.core.ApiQuery;
 
 import org.json.JSONObject;
 import java.time.LocalDateTime;
@@ -13,7 +12,7 @@ import java.util.HashMap;
  */
 public class Transactions {
 
-    private static ApiConnection apiConnection;
+    private ApiConnection apiConnection;
 
     /**
      * Used to initialize a transaction
