@@ -4,6 +4,10 @@
 
 # IntelliJ project files
 .idea
+bin
+boot
+conf
+lib
 *.iml
 .DS_Store
 out

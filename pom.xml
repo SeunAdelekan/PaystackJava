@@ -5,7 +5,10 @@
     <groupId>me.iyanuadelekan</groupId>
     <artifactId>paystackjava</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
+    <build>
+        <sourceDirectory>src/me/iyanuadelekan</sourceDirectory>
+    </build>
     <dependencies>
         <dependency>
             <groupId>com.mashape.unirest</groupId>
