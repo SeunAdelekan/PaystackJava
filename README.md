@@ -1,6 +1,6 @@
-# PaystackJava
-A Java based API wrapper for the Paystack API
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+# PaystackJava
 
 A Java API wrapper for the facilitation of quick and easy development and integration of Java based applications with the the Paystack API.
 
