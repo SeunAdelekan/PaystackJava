@@ -1,4 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Issue Count](https://codeclimate.com/github/SeunAdelekan/PaystackJava/badges/issue_count.svg)](https://codeclimate.com/github/SeunAdelekan/PaystackJava)
 
 # PaystackJava
 
