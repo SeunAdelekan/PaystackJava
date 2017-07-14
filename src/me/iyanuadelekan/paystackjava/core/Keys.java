@@ -27,9 +27,8 @@ class Keys {
         Scanner scanner = new Scanner(file);
 
         while(scanner.hasNext()) {
-            fileContent.concat(scanner.nextLine()) ;
+            fileContent += scanner.nextLine();
         }
-        
         keyObject = new JSONObject(fileContent).getJSONObject("API_KEYS");
 
         this.KEY_IN_USE = keyObject.getString("KEY_IN_USE");
