@@ -15,6 +15,7 @@ public class Transactions {
 
     /**
      * Used to initialize a transaction
+     *
      * @param queryMap
      * @return
      */
@@ -25,6 +26,7 @@ public class Transactions {
 
     /**
      * Used to initialize a transaction
+     *
      * @param query
      * @return
      */
@@ -35,6 +37,7 @@ public class Transactions {
 
     /**
      * Used to initialize a transaction
+     *
      * @param reference
      * @param amount
      * @param email
@@ -43,7 +46,7 @@ public class Transactions {
      * @return
      */
     public JSONObject initializeTransaction(String reference, String amount, String email,
-                                            String plan, String callback_url) {
+            String plan, String callback_url) {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_INITIALIZE_TRANSACTION);
         ApiQuery apiQuery = new ApiQuery();
         apiQuery.putParams("reference", reference);
@@ -56,6 +59,7 @@ public class Transactions {
 
     /**
      * Used to verify a transaction
+     *
      * @param reference
      * @return
      */
@@ -66,6 +70,7 @@ public class Transactions {
 
     /**
      * Used to list transactions
+     *
      * @param queryMap
      * @return
      */
@@ -76,6 +81,7 @@ public class Transactions {
 
     /**
      * Used to list transactions
+     *
      * @param query
      * @return
      */
@@ -86,6 +92,7 @@ public class Transactions {
 
     /**
      * Used to list transactions
+     *
      * @param perPage
      * @param page
      * @return
@@ -100,6 +107,7 @@ public class Transactions {
 
     /**
      * Used to fetch transactions
+     *
      * @param id
      * @return
      */
@@ -110,6 +118,7 @@ public class Transactions {
 
     /**
      * Used for charge authorization
+     *
      * @param queryMap
      * @return
      */
@@ -120,6 +129,7 @@ public class Transactions {
 
     /**
      * Used for charge authorization
+     *
      * @param query
      * @return
      */
@@ -130,6 +140,7 @@ public class Transactions {
 
     /**
      * Used for charge authorization
+     *
      * @param reference
      * @param authorization_code
      * @param amount
@@ -138,7 +149,7 @@ public class Transactions {
      * @return
      */
     public JSONObject chargeAuthorization(String reference, String authorization_code, String amount,
-                                            String email, String callback_url) {
+            String email, String callback_url) {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_TRANSACTIONS_CHARGE_AUTHORIZATION);
         ApiQuery apiQuery = new ApiQuery();
 
@@ -153,6 +164,7 @@ public class Transactions {
 
     /**
      * Used for charge token
+     *
      * @param queryMap
      * @return
      */
@@ -163,6 +175,7 @@ public class Transactions {
 
     /**
      * Used for charge token
+     *
      * @param query
      * @return
      */
@@ -173,6 +186,7 @@ public class Transactions {
 
     /**
      * Used for charge token
+     *
      * @param reference
      * @param token
      * @param amount
@@ -193,6 +207,7 @@ public class Transactions {
 
     /**
      * Used to export transactions
+     *
      * @param queryMap
      * @return
      */
@@ -203,6 +218,7 @@ public class Transactions {
 
     /**
      * Used to export transactions
+     *
      * @param query
      * @return
      */
@@ -213,6 +229,7 @@ public class Transactions {
 
     /**
      * Used to export transactions
+     *
      * @param from
      * @param to
      * @param settled

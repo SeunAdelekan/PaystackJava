@@ -15,7 +15,7 @@ import java.util.HashMap;
  */
 public class ApiConnection {
 
-    private  String url;
+    private String url;
     private String apiKey;
 
     /**
@@ -37,14 +37,15 @@ public class ApiConnection {
 
     /**
      * Connects to and queries Paystack API with POST
+     *
      * @param query - APIQuery containing parameters to send
      * @return - JSONObject containing API response
      */
     public JSONObject connectAndQuery(ApiQuery query) {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.post(url)
-                    .header("Accept","application/json")
-                    .header("Authorization","Bearer " + apiKey)
+                    .header("Accept", "application/json")
+                    .header("Authorization", "Bearer " + apiKey)
                     .fields(query.getParams())
                     .asJson();
             return queryForResponse.getBody().getObject();
@@ -54,17 +55,17 @@ public class ApiConnection {
         return null;
     }
 
-
     /**
      * Connects to and queries API with POST
+     *
      * @param query - HashMap containing parameters to send
      * @return - JSONObject containing API response
      */
-    public JSONObject connectAndQuery(HashMap<String,Object> query) {
+    public JSONObject connectAndQuery(HashMap<String, Object> query) {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.post(url)
-                    .header("Accept","application/json")
-                    .header("Authorization","Bearer " + apiKey)
+                    .header("Accept", "application/json")
+                    .header("Authorization", "Bearer " + apiKey)
                     .fields(query)
                     .asJson();
             return queryForResponse.getBody().getObject();
@@ -76,13 +77,14 @@ public class ApiConnection {
 
     /**
      * Used to send a GET request to the Paystack API
+     *
      * @return - JSONObject containing the API response
      */
-    public JSONObject connectAndQueryWithGet(){
+    public JSONObject connectAndQueryWithGet() {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.get(url)
-                    .header("Accept","application/json")
-                    .header("Authorization","Bearer " + apiKey)
+                    .header("Accept", "application/json")
+                    .header("Authorization", "Bearer " + apiKey)
                     .asJson();
             return queryForResponse.getBody().getObject();
         } catch (UnirestException e) {
@@ -93,14 +95,15 @@ public class ApiConnection {
 
     /**
      * Used to send a GET request to the Paystack API
+     *
      * @param query - APIQuery containing parameters to send
      * @return - JSONObject containing API response
      */
-    public JSONObject connectAndQueryWithGet(ApiQuery query){
+    public JSONObject connectAndQueryWithGet(ApiQuery query) {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.get(url)
-                    .header("Accept","application/json")
-                    .header("Authorization","Bearer " + apiKey)
+                    .header("Accept", "application/json")
+                    .header("Authorization", "Bearer " + apiKey)
                     .queryString(query.getParams())
                     .asJson();
             return queryForResponse.getBody().getObject();
@@ -112,14 +115,15 @@ public class ApiConnection {
 
     /**
      * Used to send a GET request to the Paystack API
+     *
      * @param query - HashMap containing parameters to send
      * @return - JSONObject containing API response
      */
-    public JSONObject connectAndQueryWithGet(HashMap<String,Object> query) {
+    public JSONObject connectAndQueryWithGet(HashMap<String, Object> query) {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.get(url)
-                    .header("Accept","application/json")
-                    .header("Authorization","Bearer " + apiKey)
+                    .header("Accept", "application/json")
+                    .header("Authorization", "Bearer " + apiKey)
                     .queryString(query)
                     .asJson();
             return queryForResponse.getBody().getObject();
@@ -131,14 +135,15 @@ public class ApiConnection {
 
     /**
      * Used to send a PUT request to the Paystack API
+     *
      * @param query - APIQuery containing parameters to send
      * @return - JSONObject containing API response
      */
     public JSONObject connectAndQueryWithPut(ApiQuery query) {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.put(url)
-                    .header("Accept","application/json")
-                    .header("Authorization","Bearer " + apiKey)
+                    .header("Accept", "application/json")
+                    .header("Authorization", "Bearer " + apiKey)
                     .fields(query.getParams())
                     .asJson();
             return queryForResponse.getBody().getObject();
@@ -150,14 +155,15 @@ public class ApiConnection {
 
     /**
      * Used to send a PUT request to the Paystack API
+     *
      * @param query - HashMap containing parameters to send
      * @return - JSONObject containing API response
      */
-    public JSONObject connectAndQueryWithPut(HashMap<String,Object> query) {
+    public JSONObject connectAndQueryWithPut(HashMap<String, Object> query) {
         try {
             HttpResponse<JsonNode> queryForResponse = Unirest.get(url)
-                    .header("Accept","application/json")
-                    .header("Authorization","Bearer " + apiKey)
+                    .header("Accept", "application/json")
+                    .header("Authorization", "Bearer " + apiKey)
                     .queryString(query)
                     .asJson();
             return queryForResponse.getBody().getObject();
