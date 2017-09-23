@@ -14,26 +14,29 @@ public class Plans {
 
     /**
      * Used to create a plan
+     *
      * @param queryMap
      * @return
      */
-    public JSONObject createPlan(HashMap<String, Object> queryMap)  {
+    public JSONObject createPlan(HashMap<String, Object> queryMap) {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_PLANS_CREATE_PLAN);
         return this.apiConnection.connectAndQuery(queryMap);
     }
 
     /**
      * Used to create a plan
+     *
      * @param query
      * @return
      */
-    public JSONObject createPlan(ApiQuery query)  {
+    public JSONObject createPlan(ApiQuery query) {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_PLANS_CREATE_PLAN);
         return this.apiConnection.connectAndQuery(query);
     }
 
     /**
      * Used to create a plan
+     *
      * @param name
      * @param description
      * @param amount
@@ -44,7 +47,7 @@ public class Plans {
      * @return
      */
     public JSONObject createPlan(String name, String description, int amount, String interval,
-                                            boolean send_invoices, boolean send_sms, String currency)  {
+            boolean send_invoices, boolean send_sms, String currency) {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_PLANS_CREATE_PLAN);
         ApiQuery apiQuery = new ApiQuery();
 
@@ -60,31 +63,34 @@ public class Plans {
 
     /**
      * Used to list plans
+     *
      * @param queryMap
      * @return
      */
-    public JSONObject listPlans(HashMap<String, Object> queryMap)  {
+    public JSONObject listPlans(HashMap<String, Object> queryMap) {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_PLANS_LIST_PLANS);
         return this.apiConnection.connectAndQueryWithGet(queryMap);
     }
 
     /**
      * Used to list plans
+     *
      * @param query
      * @return
      */
-    public JSONObject listPlans(ApiQuery query)  {
+    public JSONObject listPlans(ApiQuery query) {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_PLANS_LIST_PLANS);
         return this.apiConnection.connectAndQueryWithGet(query);
     }
 
     /**
      * Used to list plans
+     *
      * @param perPage
      * @param page
      * @return
      */
-    public JSONObject listPlans(String perPage, String page)  {
+    public JSONObject listPlans(String perPage, String page) {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_PLANS_LIST_PLANS);
         ApiQuery apiQuery = new ApiQuery();
 
@@ -96,38 +102,42 @@ public class Plans {
 
     /**
      * Used to fetch a plan
+     *
      * @param idOrPlanCode
      * @return
      */
-    public JSONObject fetchPlan(String idOrPlanCode)  {
+    public JSONObject fetchPlan(String idOrPlanCode) {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_PLANS_FETCH_PLAN + idOrPlanCode);
         return this.apiConnection.connectAndQueryWithGet();
     }
 
     /**
      * Used to update a plan
+     *
      * @param idOrPlanCode
      * @param queryMap
      * @return
      */
-    public JSONObject updatePlan(String idOrPlanCode, HashMap<String, Object> queryMap)  {
+    public JSONObject updatePlan(String idOrPlanCode, HashMap<String, Object> queryMap) {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_PLANS_UPDATE_PLAN + idOrPlanCode);
         return this.apiConnection.connectAndQueryWithPut(queryMap);
     }
 
     /**
      * Used to update a plan
+     *
      * @param idOrPlanCode
      * @param query
      * @return
      */
-    public JSONObject updatePlan(String idOrPlanCode, ApiQuery query)  {
+    public JSONObject updatePlan(String idOrPlanCode, ApiQuery query) {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_PLANS_UPDATE_PLAN.concat(idOrPlanCode));
         return this.apiConnection.connectAndQueryWithPut(query);
     }
 
     /**
      * Used to update a plan
+     *
      * @param idOrPlanCode
      * @param name
      * @param description
@@ -139,7 +149,7 @@ public class Plans {
      * @return
      */
     public JSONObject updatePlan(String idOrPlanCode, String name, String description, int amount,
-                                 String interval, boolean send_invoices, String send_sms, String currency)  {
+            String interval, boolean send_invoices, String send_sms, String currency) {
         this.apiConnection = new ApiConnection(Definitions.PAYSTACK_PLANS_UPDATE_PLAN.concat(idOrPlanCode));
         ApiQuery apiQuery = new ApiQuery();
 

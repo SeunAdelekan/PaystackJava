@@ -6,12 +6,11 @@ package me.iyanuadelekan.paystackjava.constants;
 public class Definitions {
 
     /**
-     * The following are URL definitions for the Paystack API.
-     * All URLs are RESTful endpoints and as such modification of any
-     * of these URL resources will lead to problems with querying the Paystack API.
-     * Only modify if you know what you are doing.
+     * The following are URL definitions for the Paystack API. All URLs are
+     * RESTful endpoints and as such modification of any of these URL resources
+     * will lead to problems with querying the Paystack API. Only modify if you
+     * know what you are doing.
      */
-    
     private final static String BASE_API_ENDPOINT = "https://api.paystack.co";
 
     public static final String PAYSTACK_INLINE_PAYSTACK_STANDARD = BASE_API_ENDPOINT + "/transaction/initialize";
