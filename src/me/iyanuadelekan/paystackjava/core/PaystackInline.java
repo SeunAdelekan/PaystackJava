@@ -1,8 +1,6 @@
 package me.iyanuadelekan.paystackjava.core;
 
 import me.iyanuadelekan.paystackjava.constants.Definitions;
-import me.iyanuadelekan.paystackjava.core.ApiConnection;
-import me.iyanuadelekan.paystackjava.core.ApiQuery;
 
 import org.json.JSONObject;
 import java.util.HashMap;
@@ -12,7 +10,7 @@ import java.util.HashMap;
  */
 public class PaystackInline {
 
-    private static ApiConnection apiConnection;
+    private ApiConnection apiConnection;
 
     /**
      *
