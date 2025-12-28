@@ -68,20 +68,7 @@ new Pages().createPage(query);
 ApiConnection.shutDown();
 ```
 
-## NOTE
-### PaystackJava utilizes a Keys.json file for the management of api key resources. This file must be placed in your root project directory and has the following structure:
-```json
-{
-  "API_KEYS":{
-    "KEY_IN_USE": "sk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "TEST_SECRET_KEY": "sk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "TEST_PUBLIC_KEY": "pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "LIVE_SECRET_KEY": "sk_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "LIVE_PUBLIC_KEY": "pk_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-  }
-}
-```
-### The value attached to KEY_IN_USE is the value used for Authorization by PaystackJava
+**NOTE**: PaystackJava reads the API key it uses for authorization via a 'PAYSTACK_API_KEY' environment variable. Ensure you define the variable for your project as necessary.
 
 ## Utilities at a glance
 ### ApiConnection {Class}:
