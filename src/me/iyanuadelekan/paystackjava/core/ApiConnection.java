@@ -6,7 +6,6 @@ import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import org.json.JSONObject;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
@@ -25,24 +24,16 @@ import org.apache.http.impl.client.HttpClients;
  */
 public class ApiConnection {
 
-    private String url;
-    private String apiKey;
+    private final String url;
+    private final String apiKey;
 
     /**
      * @param url - Paystack API URL
      */
     public ApiConnection(String url) {
         this.url = url;
-        Keys keys = new Keys();
-
-        try {
-            keys.initKeys();
-        } catch (FileNotFoundException e) {
-            System.out.print("Required Keys.json file could not be found.");
-            e.printStackTrace();
-        }
-
-        this.apiKey = keys.KEY_IN_USE;
+        ApiKeyManager apiKeyManager = new ApiKeyManager();
+        this.apiKey = apiKeyManager.getApiKey();
         this.enforceTlsV1point2();
     }
 
